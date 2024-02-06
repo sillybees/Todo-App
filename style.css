@@ -38,8 +38,9 @@ textarea {
 }
 
 .icons_cat_container {
-
+  margin: 25px 0;
 }
+
 
 ul {
   display: flex;
@@ -60,4 +61,35 @@ button {
   background-color: #E3E8EF;
   cursor: pointer;
   font-size: 20px;
+}
+
+.form_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+}
+
+
+.save_task_btn {
+  width: auto;
+  height: 40px;
+  padding: 0 40px;
+  font-size: 14px;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+
+.delete_btn {
+  background-color: #97A3B6;
+}
+.save_btn {
+  background-color: #3662E3;
+}
+
+.fa-trash-can, .fa-check {
+  padding-left: 6px;
 }
