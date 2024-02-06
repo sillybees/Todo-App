@@ -13,52 +13,66 @@
     <title>ToDo App</title>
   </head>
   <body>
-    <header>
-      <div class="header_title">
-        <img src="images/Logo.svg" alt="" />
-        <h1>My Task Board</h1>
-        <img src="images/Edit_duotone.svg" alt="" />
-      </div>
-    </header>
-    <section>
-      <form action="">
-        <div class="task_name_container">
-          <label for="task">Task Name</label>
-          <input type="text" placeholder="Enter your task's name" />
+    <div class="container">
+      <header>
+        <div class="header_title">
+          <img src="images/Logo.svg" alt="" />
+          <h1>My Task Board</h1>
+          <img src="images/Edit_duotone.svg" alt="" />
         </div>
-        <div class="description_container">
-          <label for="description">Description</label>
-          <textarea
-            name="description"
-            id=""
-            cols="30"
-            rows="10"
-            placeholder="Enter a short description"></textarea>
+      </header>
+  
+      <section>
+        <div class="task_container">
+          <div class="favicon_task">
+            <p>⏰</p>
+          </div>
+          <div>
+            <p>Task in Progress</p>
+          </div>
         </div>
-      </form>
-      <div class="icons_cat_container">
-        <div>
-          <span>Icons</span>
+      </section>
+  
+      <section>
+        <form action="">
+          <div class="task_name_container">
+            <label for="task">Task Name</label>
+            <input type="text" placeholder="Enter your task's name" />
+          </div>
+          <div class="description_container">
+            <label for="description">Description</label>
+            <textarea
+              name="description"
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Enter a short description"></textarea>
+          </div>
+        </form>
+        <div class="icons_cat_container">
+          <div class="title_icons">
+            <span>Icons</span>
+          </div>
+          <ul>
+            <li><button>👨‍💻</button></li>
+            <li><button>💬</button></li>
+            <li><button>☕</button></li>
+            <li><button>🏋️</button></li>
+            <li><button>📚</button></li>
+            <li><button>⏰</button></li>
+          </ul>
         </div>
-        <ul>
-          <li><button>👨‍💻</button></li>
-          <li><button>💬</button></li>
-          <li><button>☕</button></li>
-          <li><button>🏋️</button></li>
-          <li><button>📚</button></li>
-          <li><button>⏰</button></li>
-        </ul>
-      </div>
-      <div class="form_btn">
-        <button class="save_task_btn delete_btn">
-          <span>Delete</span>
-          <i class="fa-regular fa-trash-can"></i>
-        </button>
-        <button class="save_task_btn save_btn">
-          <span>Save</span>
-          <i class="fa-solid fa-check"></i>
-        </button>
-      </div>
-    </section>
+        <div class="form_btn">
+          <button class="save_task_btn delete_btn">
+            <span>Delete</span>
+            <i class="fa-regular fa-trash-can"></i>
+          </button>
+          <button class="save_task_btn save_btn">
+            <span>Save</span>
+            <i class="fa-solid fa-check"></i>
+          </button>
+        </div>
+      </section>
+    </div>
   </body>
 </html>
