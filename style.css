@@ -185,12 +185,9 @@ button {
 #addTask {
   display: flex;
   flex-direction: column;
+  margin-bottom: 15px;
 }
 
-#addTask > p {
-  margin: 0;
-  font-weight: 400;
-}
 
 
 .task_buttons_container {

@@ -25,9 +25,11 @@ function randomClassNameTask() {
 let taskList = [];
 
 getSaveButton.addEventListener("click", () => {
-  taskList.push({ id: uuidv4(), name: getTaskNameInput.value })
-  localStorage.setItem('TaskList', JSON.stringify(taskList))
-  displayTask()
+  if (getTaskNameInput.value !== "") {
+    taskList.push({ id: uuidv4(), name: getTaskNameInput.value })
+    localStorage.setItem('TaskList', JSON.stringify(taskList))
+    displayTask()
+  }
 });
 
 
@@ -63,6 +65,9 @@ function displayTask() {
 
     globalDiv.style.display = "flex"
     globalDiv.style.justifyContent = "space-between"
+
+    createParagraph.style.margin = "10px 0"
+    createParagraph.style.fontWeight = "400"
 
 
     secondDivParent.style.display = "flex";
