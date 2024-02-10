@@ -22,13 +22,7 @@ function randomClassNameTask() {
     });
 }
 
-let taskList = [{
-  id: uuidv4(),
-  name: "Tâche 1"
-}, {
-  id: uuidv4(),
-  name: "Tâche 2"
-}];
+let taskList = [];
 
 getSaveButton.addEventListener("click", () => {
   taskList.push({ id: uuidv4(), name: getTaskNameInput.value })
@@ -39,11 +33,47 @@ getSaveButton.addEventListener("click", () => {
 
 
 function displayTask() {
-  const getTaskDiv = document.getElementById("addTask")
-  const createElement = document.createElement("p");
+  taskList = JSON.parse(localStorage.getItem('TaskList') ?? []);
+
+  const getTaskDiv = document.getElementById("addTask");
+  getTaskDiv.innerHTML = "";
+
   taskList.forEach(function (taskItem) {
-    createElement.innerText = taskItem.name
-  })
-  createElement.classList.add(randomClassNameTask())
-  getTaskDiv.appendChild(createElement)
+    const globalDiv = document.createElement("div")
+    const firstDivChild = document.createElement("div");
+    const createParagraph = document.createElement("p");
+    const secondDivParent = document.createElement("div");
+    const firstButton = document.createElement("BUTTON");
+    const secondButton = document.createElement("BUTTON");
+
+
+    getTaskDiv.appendChild(globalDiv);
+    globalDiv.appendChild(firstDivChild)
+    globalDiv.appendChild(secondDivParent)
+    firstDivChild.appendChild(createParagraph);
+    createParagraph.innerText = taskItem.name
+
+
+    secondDivParent.appendChild(firstButton);
+    firstButton.classList.add("fa-check")
+    firstButton.classList.add("fa-solid")
+    secondDivParent.appendChild(secondButton);
+    secondButton.classList.add("fa-xmark")
+    secondButton.classList.add("fa-solid")
+
+    globalDiv.style.display = "flex"
+    globalDiv.style.justifyContent = "space-between"
+
+
+    secondDivParent.style.display = "flex";
+    secondDivParent.style.alignItems = "center";
+    secondDivParent.style.gap = "8px";
+    firstButton.style.background = 'none';
+    secondButton.style.background = 'none';
+  });
+
+  document.getElementById("task_notifications_counter").innerHTML = taskList.length
 }
+
+
+displayTask()

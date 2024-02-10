@@ -185,11 +185,29 @@ button {
 #addTask {
   display: flex;
   flex-direction: column;
-  border: 1px solid green;
-  margin-bottom: 25px;
 }
 
 #addTask > p {
   margin: 0;
   font-weight: 400;
+}
+
+
+.task_buttons_container {
+  display: flex;
+  gap: 10px;
+}
+.task_buttons_container > button {
+  border: none;
+  background-color: transparent;
+}
+
+.fa-check {
+  font-size: 20px;
+  color: green;
+}
+
+.fa-xmark {
+  font-size: 20px;
+  color: red;
 }
