@@ -33,6 +33,16 @@ getSaveButton.addEventListener("click", () => {
 });
 
 
+function deleteTask(taskItem) {
+  const getTaskList = JSON.parse(localStorage.getItem('TaskList'));
+  const filterTask = getTaskList.filter((item) => {
+    return item.id !== taskItem.id
+  })
+  localStorage.setItem('TaskList', JSON.stringify(filterTask))
+  displayTask()
+}
+
+
 
 function displayTask() {
   taskList = JSON.parse(localStorage.getItem('TaskList') ?? []);
@@ -48,6 +58,11 @@ function displayTask() {
     const firstButton = document.createElement("BUTTON");
     const secondButton = document.createElement("BUTTON");
 
+    secondButton.addEventListener("click", () => {
+      deleteTask(taskItem)
+    })
+
+
 
     getTaskDiv.appendChild(globalDiv);
     globalDiv.appendChild(firstDivChild)
@@ -59,9 +74,11 @@ function displayTask() {
     secondDivParent.appendChild(firstButton);
     firstButton.classList.add("fa-check")
     firstButton.classList.add("fa-solid")
+    firstButton.classList.add(randomClassNameTask())
     secondDivParent.appendChild(secondButton);
     secondButton.classList.add("fa-xmark")
     secondButton.classList.add("fa-solid")
+    secondButton.classList.add(randomClassNameTask())
 
     globalDiv.style.display = "flex"
     globalDiv.style.justifyContent = "space-between"
@@ -78,7 +95,11 @@ function displayTask() {
   });
 
   document.getElementById("task_notifications_counter").innerHTML = taskList.length
+
 }
 
 
+
 displayTask()
+
+
